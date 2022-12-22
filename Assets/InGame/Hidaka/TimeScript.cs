@@ -52,7 +52,7 @@ public class TimeScript : MonoBehaviour
         }
         var a =  timer.Seconds.ToString();
 
-        if (timer.Seconds > 10)
+        if (timer.Seconds >= 10)
         {
             _spArray[0].sprite = sprites[int.Parse(timer.Seconds.ToString()[0].ToString())];
             _spArray[1].sprite = sprites[int.Parse(timer.Seconds.ToString()[1].ToString())];
