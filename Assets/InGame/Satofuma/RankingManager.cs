@@ -40,7 +40,10 @@ public class RankingManager : MonoBehaviour
         {
             if(GameManager.Score > rankingValue[i])
             {
-                rankingValue[i + 1] = rankingValue[i];
+                if(i < 3)
+                {
+                    rankingValue[i + 1] = rankingValue[i];
+                }
                 rankingValue[i] = GameManager.Score;
                 return;
             }
@@ -49,6 +52,7 @@ public class RankingManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(rankingstring[i], rankingValue[i]);
         }
+        PlayerPrefs.Save();
     }
     
 }
