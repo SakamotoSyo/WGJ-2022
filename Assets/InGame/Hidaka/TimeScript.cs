@@ -10,6 +10,8 @@ public class TimeScript : MonoBehaviour
 {
     [SerializeField]
     SpriteRenderer[] _spArray = new SpriteRenderer[5];
+    [Header("制限時間")]
+    [SerializeField] float _time;
 
     bool _isPlaying = false;
 
@@ -23,7 +25,7 @@ public class TimeScript : MonoBehaviour
     Sprite[] sprites = new Sprite[10];
 
     /// <summary>タイマー用テキスト</summary>
-    [Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
+    //[Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
 
     //Dictionary<char, Sprite> num = new Dictionary<char, Sprite>()
     //{
@@ -44,28 +46,29 @@ public class TimeScript : MonoBehaviour
     /// </summary>
     void Update()
     {
-        minutes = TimeSpan.FromMinutes(1);
-        seconds = TimeSpan.FromSeconds(Time.time);
+        _time -= Time.deltaTime;
+        //minutes = TimeSpan.FromSeconds(1);
+        //seconds = TimeSpan.FromSeconds(Time.time) ;
         if (!_isPlaying)
         {
-            timer = minutes - seconds;
+           // timer = minutes - seconds;
         }
-        var a =  timer.Seconds.ToString();
+        //var a =  timer.Seconds.ToString();
 
-        if (timer.Seconds > 10)
+        if (_time >= 10)
         {
-            _spArray[0].sprite = sprites[int.Parse(timer.Seconds.ToString()[0].ToString())];
-            _spArray[1].sprite = sprites[int.Parse(timer.Seconds.ToString()[1].ToString())];
+            _spArray[0].sprite = sprites[int.Parse(_time.ToString()[0].ToString())];
+            _spArray[1].sprite = sprites[int.Parse(_time.ToString()[1].ToString())];
         }
-        else 
+        else if(_time > 0)
         {
             _spArray[0].sprite = sprites[0];
-            _spArray[1].sprite = sprites[int.Parse(timer.Seconds.ToString()[0].ToString())];
+            _spArray[1].sprite = sprites[int.Parse(_time.ToString()[0].ToString())];
         }
         //_spArray[0].sprite = sprites[]
 
         //countDown.text = $"{sprites[]:00}:{timer.Seconds:00}";
-        if (timer.Minutes != 1 && timer.Seconds == minTime)
+        if (_time <= 0)
         {
             _isPlaying = true;
             StartCoroutine(TimeOver());
@@ -76,6 +79,7 @@ public class TimeScript : MonoBehaviour
     IEnumerator TimeOver()
     {
         yield return new WaitForSeconds(2);
+        SceneTranstion.LoadScene("ResultScene");
         Debug.Log("しゅ～りょ～");
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RankingManager : MonoBehaviour
 {
     [SerializeField] Text[] rankingtext = new Text[3];
+    [SerializeField] Text resulttext;
     private string[] rankingstring = new string[3] { "一位", "二位", "三位" };
     private int[] rankingpoint = new int[3];
     private int[] rankingValue = new int[3];
@@ -18,19 +19,22 @@ public class RankingManager : MonoBehaviour
         {
             rankingtext[i].text = rankingValue[i].ToString();
         }
+        resulttext.text = GameManager.Score.ToString();
     }
 
     private void Update()
     {
-       
+        
     }
    
     private void GetRanking()//ランキング呼び出し
     {
-        for (int i = 0; i < rankingpoint[i]; i++)
+        for (int i = 0; i < rankingpoint.Length; i++)
         {
             rankingValue[i] = PlayerPrefs.GetInt(rankingstring[i]);
+            print(rankingValue[i]);
         }
+        print("1");
     }
     private void SetRanking()
     {
@@ -38,7 +42,10 @@ public class RankingManager : MonoBehaviour
         {
             if(GameManager.Score > rankingValue[i])
             {
-                rankingValue[i + 1] = rankingValue[i];
+                if(i < 3)
+                {
+                    rankingValue[i + 1] = rankingValue[i];
+                }
                 rankingValue[i] = GameManager.Score;
                 return;
             }
@@ -47,6 +54,8 @@ public class RankingManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(rankingstring[i], rankingValue[i]);
         }
+        PlayerPrefs.Save();
+        
     }
     
 }

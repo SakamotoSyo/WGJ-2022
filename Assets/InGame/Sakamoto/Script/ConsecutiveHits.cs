@@ -36,6 +36,7 @@ public class ConsecutiveHits : MonoBehaviour
         {
             _anim.SetBool("Push", true);
             //スコアの追加
+            GameManager.Addscore(1);
             //前回ボタンを押したスピードでAnimationの速度を変える
             if (_hitTime > _setting[0].HitTimeArray)
             {
