@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shout1
   m_EditorClassIdentifier: 
   Type: 0
-  SoundPrefab: {fileID: 0}
-  MaxCount: 0
+  SoundPrefab: {fileID: 2663235439808211035, guid: 3d6da9ac667c23e43984f337be6563cb, type: 3}
+  MaxCount: 2

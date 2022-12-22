@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba2ab2c0d1e36d94f8f69dc491de47ef, type: 3}
   m_Name: Shout2
   m_EditorClassIdentifier: 
-  Type: 0
-  SoundPrefab: {fileID: 0}
-  MaxCount: 0
+  Type: 1
+  SoundPrefab: {fileID: 3934621969874854797, guid: 132b27f1637833042b80e45d7d8a62f5, type: 3}
+  MaxCount: 2
