@@ -114,6 +114,10 @@ public class AudioManager
 /// </summary>
 public enum SoundPlayType
 {
+    /// <summary></summary>
     shout1,
+    /// <summary>‚æ‚Á</summary>
     shout2,
+    /// <summary>”¼’[‚È‚¢‚Á‚Ä</summary>
+    Score1,
 }
