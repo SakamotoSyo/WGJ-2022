@@ -24,15 +24,17 @@ public class RankingManager : MonoBehaviour
 
     private void Update()
     {
-       
+        
     }
    
     private void GetRanking()//ƒ‰ƒ“ƒLƒ“ƒOŒÄ‚Ño‚µ
     {
-        for (int i = 0; i < rankingpoint[i]; i++)
+        for (int i = 0; i < rankingpoint.Length; i++)
         {
             rankingValue[i] = PlayerPrefs.GetInt(rankingstring[i]);
+            print(rankingValue[i]);
         }
+        print("1");
     }
     private void SetRanking()
     {
@@ -53,6 +55,7 @@ public class RankingManager : MonoBehaviour
             PlayerPrefs.SetInt(rankingstring[i], rankingValue[i]);
         }
         PlayerPrefs.Save();
+        
     }
     
 }
