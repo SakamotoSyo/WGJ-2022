@@ -44,8 +44,8 @@ public class TimeScript : MonoBehaviour
     /// </summary>
     void Update()
     {
-        minutes = TimeSpan.FromMinutes(1);
-        seconds = TimeSpan.FromSeconds(Time.time);
+        minutes = TimeSpan.FromSeconds(30);
+        seconds = TimeSpan.FromSeconds(Time.time) ;
         if (!_isPlaying)
         {
             timer = minutes - seconds;
