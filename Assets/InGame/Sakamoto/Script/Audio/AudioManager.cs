@@ -114,10 +114,6 @@ public class AudioManager
 /// </summary>
 public enum SoundPlayType
 {
-    Shot,
-    Lose,
-    Fire,
-    AsgoreBullet,
-    AsgoreWarning,
-    Blaster,
+    shout1,
+    shout2,
 }
