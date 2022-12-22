@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RankingManager : MonoBehaviour
 {
     [SerializeField] Text[] rankingtext = new Text[3];
+    [SerializeField] Text resulttext;
     private string[] rankingstring = new string[3] { "ˆêˆÊ", "“ñˆÊ", "ŽOˆÊ" };
     private int[] rankingpoint = new int[3];
     private int[] rankingValue = new int[3];
@@ -18,6 +19,7 @@ public class RankingManager : MonoBehaviour
         {
             rankingtext[i].text = rankingValue[i].ToString();
         }
+        resulttext.text = GameManager.Score.ToString();
     }
 
     private void Update()
