@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3eb60ec07f531543a923627b4744f1c, type: 3}
   m_Name: AudioDataBase
   m_EditorClassIdentifier: 
-  paramsList: []
+  paramsList:
+  - {fileID: 11400000, guid: ce61870c90a87fe4a9d4b36206958706, type: 2}
+  - {fileID: 11400000, guid: e05d1274c8a4eab49ae4f4bbca1d4715, type: 2}
