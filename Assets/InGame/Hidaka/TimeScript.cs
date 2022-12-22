@@ -23,7 +23,7 @@ public class TimeScript : MonoBehaviour
     Sprite[] sprites = new Sprite[10];
 
     /// <summary>タイマー用テキスト</summary>
-    [Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
+    //[Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
 
     //Dictionary<char, Sprite> num = new Dictionary<char, Sprite>()
     //{
@@ -52,7 +52,7 @@ public class TimeScript : MonoBehaviour
         }
         var a =  timer.Seconds.ToString();
 
-        if (timer.Seconds > 10)
+        if (timer.Seconds >= 10)
         {
             _spArray[0].sprite = sprites[int.Parse(timer.Seconds.ToString()[0].ToString())];
             _spArray[1].sprite = sprites[int.Parse(timer.Seconds.ToString()[1].ToString())];
