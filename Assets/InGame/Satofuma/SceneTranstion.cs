@@ -8,4 +8,9 @@ public class SceneTranstion : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+    public void MainScene()
+    {
+        GameManager.ResetScore();
+        SceneManager.LoadScene("MainScene");
+    }
 }
