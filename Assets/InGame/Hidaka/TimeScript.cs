@@ -23,7 +23,7 @@ public class TimeScript : MonoBehaviour
     Sprite[] sprites = new Sprite[10];
 
     /// <summary>タイマー用テキスト</summary>
-    [Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
+    //[Tooltip("ゲームの制限時間を表示"), SerializeField] Text countDown;
 
     //Dictionary<char, Sprite> num = new Dictionary<char, Sprite>()
     //{
