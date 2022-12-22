@@ -13,7 +13,7 @@ public class ConsecutiveHits : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -24,10 +24,15 @@ public class ConsecutiveHits : MonoBehaviour
     /// <summary>
     /// 連打判定をする
     /// </summary>
-    private void ConsecutiveHitsJudge() 
+    private void ConsecutiveHitsJudge()
     {
+        if (_anim == null)
+        {
+            Debug.LogError("AnimationがNullです");
+            return;
+        }
 
-        if (Input.GetButtonDown("Jump")) 
+        if (Input.GetButtonDown("Jump"))
         {
             _anim.SetBool("Push", true);
             //スコアの追加
@@ -37,9 +42,9 @@ public class ConsecutiveHits : MonoBehaviour
                 _anim.speed = _setting[0].AnimSpeed;
                 _hitTime = 0;
             }
-            else 
+            else
             {
-                for (int i = 0; i < _setting.Length; i++)
+                for (int i = 0; i < _setting.Length - 1; i++)
                 {
                     if (_hitTime > _setting[i + 1].HitTimeArray && _hitTime < _setting[i].HitTimeArray)
                     {
@@ -56,12 +61,12 @@ public class ConsecutiveHits : MonoBehaviour
 }
 
 [System.Serializable]
-class ConsecutiveHitsSetting 
+class ConsecutiveHitsSetting
 {
     public float HitTimeArray => _hitTimeArray;
     [Header("Animationが切り替わる時間の設定")]
     [SerializeField] float _hitTimeArray;
     public float AnimSpeed => _animSpeed;
     [Header("Animationのスピード")]
-    [SerializeField] float _animSpeed;  
+    [SerializeField] float _animSpeed;
 }
