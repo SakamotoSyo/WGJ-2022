@@ -1,25 +1,26 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
+
 
 public class IndicateScore : MonoBehaviour
 {
+    //[SerializeField]int _score = 100; //動作テスト時はこの行のコメント化を解除
     int _score = 0;
     public Sprite[] numimage;
     public List<int> number = new List<int>();
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
 
-        _score = GameManager.score;
+       //_score = GameManager.score;  //ゲームのフローの中で使うときはこの行のコメント化を解除
         View(_score);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
