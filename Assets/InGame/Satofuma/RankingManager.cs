@@ -52,6 +52,7 @@ public class RankingManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(rankingstring[i], rankingValue[i]);
         }
+        PlayerPrefs.Save();
     }
     
 }
