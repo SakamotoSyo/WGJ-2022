@@ -584,8 +584,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1974135078}
         m_TargetAssemblyTypeName: SceneTranstion, Assembly-CSharp
-        m_MethodName: Loadscene
-        m_Mode: 3
+        m_MethodName: MainScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
